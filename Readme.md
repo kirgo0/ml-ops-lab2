@@ -1,8 +1,6 @@
 # Iris ML API — Лабораторна робота №2 (CI/CD та ML API)
 
-[![CI](https://github.com/YOUR_USERNAME/ml-api-lab2/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/ml-api-lab2/actions/workflows/ci.yml)
-
-> ⚠️ Замініть `YOUR_USERNAME` у бейджі вище на ваш GitHub-нікнейм після створення репозиторію.
+[![CI](https://github.com/kirgo0/ml-ops-lab2/actions/workflows/ci.yml/badge.svg)](https://github.com/kirgo0/ml-ops-lab2/actions/workflows/ci.yml)
 
 ## Опис проєкту
 
@@ -62,18 +60,13 @@ ml-api-lab2/
 
 ## Послідовний запуск проєкту
 
-### Етап 1. Ініціалізація репозиторію
+### Ініціалізація репозиторію
 
 ```bash
-# 1. Створіть публічний репозиторій на github.com (наприклад, "ml-api-lab2")
-# 2. Склонуйте його локально
 git clone https://github.com/kirgo0/ml-ops-lab2.git
-cd ml-api-lab2
-
-# 3. Скопіюйте у цей каталог усі файли проєкту
 ```
 
-### Етап 2. Локальне середовище
+### Локальне середовище
 
 ```bash
 # Створення віртуального оточення
@@ -90,7 +83,7 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### Етап 3. Тренування моделі
+### Тренування моделі
 
 ```bash
 python -m ml.train
@@ -104,7 +97,7 @@ Saved to: /path/to/ml-api-lab2/model.joblib
 
 Файл `model.joblib` з'явиться у корені проєкту — це артефакт, який буде використовувати API.
 
-### Етап 4. Запуск API локально
+### Запуск API локально
 
 ```bash
 uvicorn app.main:app --reload
@@ -131,7 +124,7 @@ curl http://localhost:8000/health
 # {"status":"healthy","model_loaded":true}
 ```
 
-### Етап 5. Запуск тестів
+### Запуск тестів
 
 ```bash
 pytest -q
@@ -147,7 +140,7 @@ pytest -q
 - **test_model.py** (3 тести): створення файлу моделі, передбачення коректних класів, сума ймовірностей = 1.
 - **test_api.py** (6 тестів): ендпоінти `/`, `/health`, `/predict` (setosa, virginica), валідація типу та діапазонів.
 
-### Етап 6. Запуск через Docker
+### Запуск через Docker
 
 ```bash
 # Збірка образу (модель тренується автоматично під час білду)
@@ -162,7 +155,7 @@ curl http://localhost:8000/health
 
 Зупинити контейнер: `Ctrl+C`.
 
-### Етап 7. Налаштування CI (GitHub Actions)
+### Налаштування CI (GitHub Actions)
 
 1. Переконайтеся, що файл `.github/workflows/ci.yml` присутній у репозиторії.
 2. Закомітьте та запуште зміни:
@@ -179,7 +172,7 @@ curl http://localhost:8000/health
 - **Job `test`**: піднімає Python 3.11 → встановлює залежності → тренує модель → запускає `pytest`.
 - **Job `docker-build`**: після успіху тестів збирає Docker-образ для перевірки коректності Dockerfile.
 
-### Етап 8. Деплой на Render
+### Деплой на Render
 
 1. Зареєструйтеся на <https://render.com> через ваш GitHub-акаунт.
 2. На дашборді натисніть **New** → **Web Service**.
@@ -260,10 +253,10 @@ curl -X POST https://ml-api-<your-name>.onrender.com/predict \
 
 ## Посилання
 
-- **Репозиторій GitHub**: `https://github.com/YOUR_USERNAME/ml-api-lab2`
-- **Розгорнутий сервіс на Render**: `https://ml-api-<your-name>.onrender.com`
-- **Swagger UI (інтерактивна документація)**: `https://ml-api-<your-name>.onrender.com/docs`
-- **GitHub Actions (статус CI)**: `https://github.com/YOUR_USERNAME/ml-api-lab2/actions`
+- **Репозиторій GitHub**: `https://github.com/kirgo0/ml-ops-lab2`
+- **Розгорнутий сервіс на Render**: `https://ml-api-kirgo.onrender.com`
+- **Swagger UI (інтерактивна документація)**: `https://ml-api-kirgo.onrender.com/docs`
+- **GitHub Actions (статус CI)**: `https://github.com/kirgo0/ml-ops-lab2/actions`
 
 ---
 
@@ -282,4 +275,6 @@ curl -X POST https://ml-api-<your-name>.onrender.com/predict \
 
 ## Автор
 
-Лабораторну роботу виконано у рамках курсу **MLOps**.
+**ПІБ:** Голець Кирило Павлович
+**Група:** ТР-51мп
+**Дата:** 2026
