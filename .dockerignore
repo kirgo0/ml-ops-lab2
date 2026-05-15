@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.git/
+.github/
+tests/
+*.md
+.env
+.venv/
+venv/
+.idea/
+.vscode/
+*.log
+model.joblib
